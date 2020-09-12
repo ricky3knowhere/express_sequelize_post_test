@@ -1,5 +1,5 @@
 // START PLEASE FILL THIS
-const yourName = 'please fill your name'
+const yourName = 'ricky'
 // END PLEASE FILL THIS
 
 const express = require('express')
@@ -21,6 +21,9 @@ app.set('views', __dirname + '/views')
 
 // ROUTES START
 app.get('/', (req, res) => res.render('pages/root', { yourName }))
+app.get('/login', login.get)
+app.post('/login', login.post)
+
 // ROUTES END
 
 const start = async () => {
