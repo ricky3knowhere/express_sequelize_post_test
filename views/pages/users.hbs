@@ -1,11 +1,15 @@
 {{#contentFor 'body'}}
   <h3>List User</h3>
 
-  <a href="user/new">Create New</a>
-<script>console.log(data)</script>
+  <a href="/users/new">Create New</a>
   <ul>
   {{#each data}}
-    <li><h4>{{data.name}}</h4></li>
+    <li>
+      <h4>{{name}}</h4>
+      <a href="users/details/{{id}}">Detail</a>
+      <a href="users/delete/{{id}}">Delete</a>
+    </li>
   {{/each}}
   </ul>
+
 {{/contentFor }}

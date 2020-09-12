@@ -12,7 +12,7 @@ const login = require('./routes/login')
 const users = require('./routes/users')
 
 app.use(express.static('public'))
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // VIEWS CONFIG START
 app.engine('hbs', hbs.express4({
@@ -33,6 +33,8 @@ app.post('/login', login.post)
 app.get('/users', users.get)
 app.get('/users/new', users.create_get)
 app.post('/users/new', users.create_post)
+app.get('/users/details/:id', users.details)
+app.get('/users/delete/:id', users.delete)
 
 
 // ROUTES END

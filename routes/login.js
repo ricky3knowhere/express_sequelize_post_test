@@ -14,9 +14,9 @@ login.post = async (req, res) => {
 
   console.log(user);
   if( user && bcrypt.compareSync(password, user.dataValues.password)){
-    res.render('pages/users')
+    res.redirect('/users')
   }else {
-    res.render('pages/login')
+    res.redirect('/login')
   }
 }
 
